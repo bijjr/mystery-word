@@ -59,24 +59,22 @@ if __name__ == '__main__':
 ##############################################################################
 
 def test_easy_words(self):
-    word_length = len(get_random_word(1))
-    self.assertTrue(word_length >= 4 and word_length <= 6
+    self.assertTrue(len(random_word(easy_words(word_list))) >= 4 and word_length <= 6)
 
 
 def test_medium_words(self):
-    word_length = len(get_random_word(2))
-    self.assertTrue(word_length >= 6 and word_length <= 10
+    self.assertTrue(len(random_word(medium_words(word_list))) >= 6 and word_length <= 10)
 
 
 def test_hard_words(self):
-    self.assertTrue(len(get_random_word(3)) >= 10
+    self.assertTrue(len(random_word(hard_words(word_list))) >= 8)
 
 def test_correct_guess(self):
-    self.assertTrue(correct_guess('hola', ['o'], 7) == ['o']
+    self.assertTrue(correct_guess('hola', ['o'], 7) == ['o'])
 
 
 def test_bad_guess(self):
-    self.assertTrue(incorrect_guess(5, '5', 'hello') == 5
+    self.assertTrue(incorrect_guess(5, '5', 'hello') == 5)
 
 def test_bad_guess(self):
     self.assertFalse(display_word('hola') == '_ _ _ _ '
